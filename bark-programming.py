@@ -238,6 +238,6 @@ def run(file):
     tokens = token(data)
     parse(tokens)
 
-run("/Users/kieranblackley/Downloads/Lottie Programming Projects/" + input("Please place your code in the projects folder and give the project name here: "))
+run(input("Please specify the directory to the program you want to run (with the filename of the program you are running too): "))
 
 input('Press ENTER to exit')
