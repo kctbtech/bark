@@ -233,11 +233,20 @@ def parse(token_list):
                 repeating = 0
     print(variables)
 
-def run(file):
+def run_file(file):
     data = open(file, "r").read()
     tokens = token(data)
     parse(tokens)
 
-run(input("Please specify the directory to the program you want to run (with the filename of the program you are running too): "))
+def run_line(line):
+    tokens = token(line)
+    parse(tokens)
 
-input('Press ENTER to exit')
+if input("1. Use shell or 2. Use file upload: 1 or 2 ") == "1":
+    line = 0
+    while True:
+        line += 1
+        run_line(input(f"{line} >"))
+else:
+    run_file(input("Please specify project directory: "))
+    input('Press ENTER to exit')
